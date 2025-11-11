@@ -30,7 +30,7 @@ function App() {
       if (filters.type && filters.type !== 'any') params.set('type', filters.type);
       if (filters.videoDuration && filters.videoDuration !== 'any') params.set('videoDuration', filters.videoDuration);
       if (filters.uploadDate && filters.uploadDate !== 'any') params.set('uploadDate', filters.uploadDate);
-      const response = await axios.get(`http://localhost:5000/search?${params.toString()}`);
+      const response = await axios.get(`/api/search?${params.toString()}`);
       setSearchResults(response.data.items || []);
     } catch (error) {
       console.error('Error fetching search results:', error);
